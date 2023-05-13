@@ -9,11 +9,14 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "create-react-app": "npm run start --prefix create-react-app",
+    "dev": "concurrently \"npm run server\" \"npm run create-react-app\""
   },
   "author": "eisa",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^8.0.1",
     "cookie-session": "^2.0.0",
     "express": "^4.18.2",
     "mongodb": "^5.4.0",
