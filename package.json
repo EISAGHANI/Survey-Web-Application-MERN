@@ -11,11 +11,14 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "create-react-app": "npm run start --prefix create-react-app",
-    "dev": "concurrently \"npm run server\" \"npm run create-react-app\""
+    "dev": "concurrently \"npm run server\" \"npm run create-react-app\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix create-react-app && npm run build --prefix create-react-app"
   },
   "author": "eisa",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
     "concurrently": "^8.0.1",
     "cookie-session": "^2.0.0",
     "express": "^4.18.2",
@@ -23,6 +26,8 @@
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22",
     "passport": "^0.5.3",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "redux-thunk": "^2.4.2",
+    "stripe": "^12.5.0"
   }
 }
